@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Empleo</title>
+    
+    <style>
+        /* Estilos para el recuadro */
+        body {
+            background-color: #eaf4ff; /* Cambiar color de fondo de la página */
+        }
+
+        .login-box {
+            font-family: Arial, sans-serif;
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 50vh;
+            transform: translateY(-50%);
+            padding: 20px;
+            background-color: #ffffff; /* Cambiar color de fondo del recuadro a blanco */
+            text-align: center;
+            border: 1px solid #00b9ff;
+            border-radius: 5px; /* Borde redondeado */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra */
+        }
+
+        .login-box h2 {
+            font-family: Arial, sans-serif;
+            margin-top: 0;
+            color: #00b9ff;
+        }
+
+        .login-box label {
+            font-family: Arial, sans-serif;
+            display: block;
+            margin-bottom: 10px;
+            color: #45c9ff;
+        }
+
+        .login-box input {
+            font-family: Arial, sans-serif;
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 20px;
+            color: #b1ddff;
+            border: 1px solid #45c9ff; /* Cambiar color del borde a #45c9ff */
+            border-radius: 5px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-box button[type="submit"],
+        .login-box a {
+            font-family: Arial, sans-serif;
+            width: auto;
+            color: #eaf4ff;
+            background-color: #00b9ff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+            text-decoration: none; /* Agregar estilo de enlace al botón "Inicio" */
+            display: inline-block; /* Alinear el enlace "Inicio" junto al botón "Iniciar sesión" */
+            margin-top: 10px; /* Espacio entre el botón "Iniciar sesión" y el enlace "Inicio" */
+        }
+        
+        .login-box button[type="submit"]:hover,
+        .login-box a:hover {
+            background-color: #45c9ff;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="login-box">
+        <h2>Agregar Empleo</h2>
+        <form action="/empleos/agregar" method="post" th:object="${empleo}">
+            <div>
+                <label for="id">ID:</label>
+                <input type="number" id="id" name="id" required/>
+            </div>
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required/>
+            </div>
+            <div>
+                <label for="categoria">Categoría:</label>
+                <input type="text" id="categoria" name="categoria" required/>
+            </div>
+            <div>
+                <label for="areaTrabajo">Área de Trabajo:</label>
+                <input type="text" id="areaTrabajo" name="areaTrabajo" required/>
+            </div>
+            <div>
+                <label for="empresa">Empresa:</label>
+                <input type="text" id="empresa" name="empresa" required/>
+            </div>
+            <div>
+                <label for="nivel">Nivel:</label>
+                <input type="text" id="nivel" name="nivel" required/>
+            </div>
+            <div>
+                <label for="sueldo">Sueldo:</label>
+                <input type="number" id="sueldo" name="sueldo" required/>
+            </div>
+            <div>
+                <label for="funciones">Funciones:</label>
+                <textarea id="funciones" name="funciones" required></textarea>
+            </div>
+            <div>
+                <label for="cargoJefe">Cargo del Jefe:</label>
+                <input type="text" id="cargoJefe" name="cargoJefe" required/>
+            </div>
+            <div>
+                <label for="ccUsuario">Código de Usuario:</label>
+                <input type="number" id="ccUsuario" name="ccUsuario" required/>
+            </div>
+            <button type="submit">Guardar</button>
+            <a href="/">Inicio</a>
+        </form>
+    </div>
+</body>
+</html>

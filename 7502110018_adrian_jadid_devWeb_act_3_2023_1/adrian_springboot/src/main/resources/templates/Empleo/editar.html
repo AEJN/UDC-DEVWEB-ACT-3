@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Empleo</title>
+</head>
+<body>
+    <h1>Editar Empleo</h1>
+    <form action="/empleos/editar" method="post" th:object="${empleo}">
+        <div>
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" th:value="${empleo.id}" th:readonly="readonly" required/>
+        </div>
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" th:value="${empleo.nombre}" required/>
+        </div>
+        <div>
+            <label for="categoria">Categoría:</label>
+            <input type="text" id="categoria" name="categoria" th:value="${empleo.categoria}" required/>
+        </div>
+        <div>
+            <label for="areaTrabajo">Área de Trabajo:</label>
+            <input type="text" id="areaTrabajo" name="areaTrabajo" th:value="${empleo.areaTrabajo}" required/>
+        </div>
+        <div>
+            <label for="empresa">Empresa:</label>
+            <input type="text" id="empresa" name="empresa" th:value="${empleo.empresa}" required/>
+        </div>
+        <div>
+            <label for="nivel">Nivel:</label>
+            <input type="text" id="nivel" name="nivel" th:value="${empleo.nivel}" required/>
+        </div>
+        <div>
+            <label for="sueldo">Sueldo:</label>
+            <input type="number" id="sueldo" name="sueldo" th:value="${empleo.sueldo}" required/>
+        </div>
+        <div>
+            <label for="funciones">Funciones:</label>
+            <textarea id="funciones" name="funciones" required th:text="${empleo.funciones}"></textarea>
+        </div>
+        <div>
+            <label for="cargoJefe">Cargo del Jefe:</label>
+            <input type="text" id="cargoJefe" name="cargoJefe" th:value="${empleo.cargoJefe}" required/>
+        </div>
+        <div>
+            <label for="ccUsuario">Código de Usuario:</label>
+            <input type="number" id="ccUsuario" name="ccUsuario" th:value="${empleo.ccUsuario}" required/>
+        </div>
+        <button type="submit">Guardar</button>
+        <a href="/">Inicio</a>
+    </form>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJ CRUD SPRINGBOOT</title>
+    <style>
+        /* Estilos para el recuadro */
+        body {
+            background-color: #eaf4ff; /* Cambiar color de fondo de la página */
+        }
+
+        .container {
+            font-family: Arial, sans-serif;
+            width: 1000px;
+            margin: 0 auto;
+            margin-top: 50vh;
+            transform: translateY(-50%);
+            padding: 20px;
+            background-color: #ffffff; /* Cambiar color de fondo del recuadro a blanco */
+            text-align: center;
+            border: 1px solid #00b9ff;
+            border-radius: 5px; /* Borde redondeado */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra */
+        }
+
+        .container h1 {
+            font-family: Arial, sans-serif;
+            margin-top: 0;
+            color: #00b9ff;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            font-family: Arial, sans-serif;
+            color: #eaf4ff;
+            background-color: #00b9ff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #45c9ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Bienvenido al CRUD 15 Empleos hecho por: Adrian Jadid</h1>
+            <nav>
+                <ul>
+                    <li><a href="/usuarios/listar">Listar Usuarios</a></li>
+                    <li><a href="/usuarios/registrar">Registrar Usuario</a></li>
+                    <li><a href="/usuarios/login">Login</a></li>
+                    <li><a href="/empleos/listar">Listar Empleos</a></li>
+                    <li><a href="/empleos/agregar">Agregar Empleo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>
+

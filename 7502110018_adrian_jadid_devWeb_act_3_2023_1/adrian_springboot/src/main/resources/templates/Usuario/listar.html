@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Usuarios</title>
+    
+    <style>
+        /* Estilos para el recuadro */
+        body {
+            background-color: #eaf4ff; /* Cambiar color de fondo de la página */
+        }
+
+        .login-box {
+            font-family: Arial, sans-serif;
+            width: 900px;
+            margin: 0 auto;
+            margin-top: 50vh;
+            transform: translateY(-50%);
+            padding: 20px;
+            background-color: #ffffff; /* Cambiar color de fondo del recuadro a blanco */
+            text-align: center;
+            border: 1px solid #00b9ff;
+            border-radius: 5px; /* Borde redondeado */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra */
+        }
+
+        .login-box h1 {
+            font-family: Arial, sans-serif;
+            margin-top: 0;
+            color: #00b9ff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #00b9ff;
+            color: #fff;
+        }
+
+        table td a {
+            color: #00b9ff;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        table td a:hover {
+            color: #45c9ff;
+        }
+
+        .login-box a {
+            font-family: Arial, sans-serif;
+            color: #eaf4ff;
+            background-color: #00b9ff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+            text-decoration: none; /* Agregar estilo de enlace al botón "Inicio" */
+            display: inline-block; /* Alinear el enlace "Inicio" junto al botón "Iniciar sesión" */
+            margin-top: 10px; /* Espacio entre el botón "Iniciar sesión" y el enlace "Inicio" */
+        }
+
+        .login-box a:hover {
+            background-color: #45c9ff;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="login-box">
+        <h1>Listar Usuarios</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>CC</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Género</th>
+                    <th>Email</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="usuario : ${usuarios}">
+                    <td th:text="${usuario.cc}"></td>
+                    <td th:text="${usuario.nombre}"></td>
+                    <td th:text="${usuario.apellido}"></td>
+                    <td th:text="${usuario.genero}"></td>
+                    <td th:text="${usuario.email}"></td>
+                    <td>
+                        <a th:href="@{/usuarios/editar/{cc}(cc=${usuario.cc})}">Editar</a>
+                        <a th:href="@{/usuarios/eliminar/{cc}(cc=${usuario.cc})}">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/usuarios/registrar">Registrar nuevo usuario</a>
+    </div>
+</body>
+</html>
